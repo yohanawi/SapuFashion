@@ -13,10 +13,10 @@
 
 <header class="header">
    <section class="flex">
-      <a href="home.php" class="logo">Sapu Text<span>.</span></a>
+      <a href="index.php" class="logo">Sapu Text<span>.</span></a>
 
       <nav class="navbar">
-         <a href="home.php">home</a>
+         <a href="index.php">home</a>
          <a href="about.php">about</a>
          <a href="order.php">orders</a>
          <a href="shop.php">shop</a>
