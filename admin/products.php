@@ -131,7 +131,7 @@
          <div class="box">
             <img src="../uploaded_img/<?= $fetch_products['image_01']; ?>" alt="">
             <div class="name"><?= $fetch_products['name']; ?></div>
-            <div class="price">$<span><?= $fetch_products['price']; ?></span>/-</div>
+            <div class="price">Rs.<span><?= $fetch_products['price']; ?></span>/-</div>
             <div class="details"><span><?= $fetch_products['details']; ?></span></div>
             <div class="flex-btn">
                <a href="update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">update</a>
