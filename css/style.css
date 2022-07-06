@@ -945,7 +945,7 @@ section{
 }
 /*review style*/
 .reviews .review{
-   width: 80%;
+   width: auto;
    height: auto;
    position: relative;
    margin: 25px auto;

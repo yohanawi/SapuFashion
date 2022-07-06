@@ -60,19 +60,18 @@
         <div class="icons">
             <i class="fas fa-map-marker-alt"></i>
             <h3>address</h3>
-            <p>jogeshwari, mumbai, india - 400104</p>
+            <p>137/2, Meerigama Road, Divulapitiya</p>
         </div>
         <div class="icons">
             <i class="fas fa-envelope"></i>
             <h3>email</h3>
-            <p>shaikhanas@gmail.com</p>
-            <p>anasbhai@gmail.com</p>
+            <p>saputext@gmail.com</p>
         </div>
         <div class="icons">
             <i class="fas fa-phone"></i>
             <h3>phone</h3>
-            <p>+123-456-7890</p>
-            <p>+111-222-3333</p>
+            <p>+94 76 025 6656</p>
+            <p>+94 70 523 0139</p>
         </div>
     </div>
     <div class="row">
