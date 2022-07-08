@@ -115,7 +115,12 @@
             <p>
                Dimensions	40 × 32 × 1 cm
                Size	
-               XS, S, M, L, XL, XXL</p>
+               s product is eligible for a satisfaction money-back guarantee or exchange of sizes if required. Please read our Return & Exchange Policy for more information.  
+               Payments & Delivery
+               We accept all major credit & debit cards, cash on delivery payments.
+               The delivery fee is only Rs.240/- flat-rate to any location and for any number of items you order. Deliveries will usually take 1-3 working days within Colombo and suburbs. 3-5 working days outstation.
+               We highly reco   XS, S, M, L, XL, XXL
+            </p>
          </div>
          <div class="btncontent" id="btncontent3">
          <h3>JAVA</h3>
