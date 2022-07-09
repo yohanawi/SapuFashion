@@ -12,6 +12,9 @@
       $price = filter_var($price, FILTER_SANITIZE_STRING);
       $details = $_POST['details'];
       $details = filter_var($details, FILTER_SANITIZE_STRING);
+      $size = $_POST['size'];
+      $size = filter_var($size, FILTER_SANITIZE_STRING);
+
 
       $image_01 = $_FILES['image_01']['name'];
       $image_01 = filter_var($image_01, FILTER_SANITIZE_STRING);
@@ -31,13 +34,23 @@
       $image_tmp_name_03 = $_FILES['image_03']['tmp_name'];
       $image_folder_03 = '../uploaded_img/'.$image_03;
 
+      $for_query = '';
+      if(!empty($_POST["size"]))
+      {
+       foreach($_POST["size"] as $size)
+       {
+        $for_query .= $size . ', ';
+       }
+       $for_query = substr($for_query, 0, -2);
+      }
+
       $select_products = $conn->prepare("SELECT * FROM `products` WHERE name = ?");
       $select_products->execute([$name]);
 
       if($select_products->rowCount() > 0){
          $message[] = 'product name already exist!';
       }else{
-         $insert_products = $conn->prepare("INSERT INTO `products`(name, details, price, image_01, image_02, image_03) VALUES(?,?,?,?,?,?)");
+         $insert_products = $conn->prepare("INSERT INTO `products`(name, details, price, image_01, image_02, image_03, size) VALUES(?,?,?,?,?,?,'$for_query')");
          $insert_products->execute([$name, $details, $price, $image_01, $image_02, $image_03]);
          if($insert_products){
             if($image_size_01 > 2000000 OR $image_size_02 > 2000000 OR $image_size_03 > 2000000){
@@ -115,6 +128,14 @@
                <span>product details (required)</span>
                <textarea name="details" placeholder="enter product details" class="box" required maxlength="500" cols="30" rows="10"></textarea>
             </div>
+            <div class="inputBox" style="padding-left: 150px;">
+               <input type="checkbox" name="size[]" value="XS" /><label style="font-size: 18px; padding-right: 15px; padding-left: 1px;"> XS</label>
+               <input type="checkbox" name="size[]" value="S" /> <label style="font-size: 18px; padding-right: 15px; padding-left: 1px;"> S</label>
+               <input type="checkbox" name="size[]" value="M" /> <label style="font-size: 18px; padding-right: 15px; padding-left: 1px;"> M</label>
+               <input type="checkbox" name="size[]" value="L" /> <label style="font-size: 18px; padding-right: 15px; padding-left: 1px;"> L</label>
+               <input type="checkbox" name="size[]" value="XL" /> <label style="font-size: 18px; padding-right: 15px; padding-left: 1px;"> XL</label>
+               <input type="checkbox" name="size[]" value="XXL" /> <label style="font-size: 18px; padding-right: 15px; padding-left: 1px;"> XXL</label>
+            </div>
          </div>
          <input type="submit" value="add product" class="btn" name="add_product">
       </form>
@@ -132,6 +153,7 @@
             <img src="../uploaded_img/<?= $fetch_products['image_01']; ?>" alt="">
             <div class="name"><?= $fetch_products['name']; ?></div>
             <div class="price">Rs.<span><?= $fetch_products['price']; ?></span>/-</div>
+            <div class="size"><?= $fetch_products['size']; ?></div>
             <div class="details"><span><?= $fetch_products['details']; ?></span></div>
             <div class="flex-btn">
                <a href="update_product.php?update=<?= $fetch_products['id']; ?>" class="option-btn">update</a>

@@ -65,17 +65,7 @@
                      </div>
                   </div>
                   <div class="sizes">
-                     <p>Size: </p>
-                     <form action="" method="post">
-                        <select name="sizes" class="select">
-                           <option value="select size">select size</option>
-                           <option value="XS">XS</option>
-                           <option value="XS">S</option>
-                           <option value="XS">M</option>
-                           <option value="XS">L</option>
-                           <option value="XS">XL</option>
-                           <option value="XS">XXL</option>
-                        </select>
+                     <p style="font-size: 18px;">Size: &nbsp; <label style="color: green; font-size: 18px;"><?= $fetch_product['size']; ?></label> </p>
                   </form>
                   </div>
                </div>
