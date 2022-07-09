@@ -14,7 +14,9 @@
       $price = filter_var($price, FILTER_SANITIZE_STRING);
       $details = $_POST['details'];
       $details = filter_var($details, FILTER_SANITIZE_STRING);
-      $update_product = $conn->prepare("UPDATE `products` SET name = ?, price = ?, details = ? WHERE id = ?");
+      $size = $_POST['size'];
+      $size = filter_var($size, FILTER_SANITIZE_STRING);
+      $update_product = $conn->prepare("UPDATE `products` SET name = ?, price = ?, details = ?, size='$for_query' WHERE id = ?");
       $update_product->execute([$name, $price, $details, $pid]);
       $message[] = 'product updated successfully!';
       $old_image_01 = $_POST['old_image_01'];
@@ -70,6 +72,15 @@
             $message[] = 'image 03 updated successfully!';
          }
       }
+      $for_query = '';
+      if(!empty($_POST["size"]))
+      {
+       foreach($_POST["size"] as $size)
+       {
+        $for_query .= $size . ', ';
+       }
+       $for_query = substr($for_query, 0, -2);
+      }
    }
 ?>
 
@@ -119,6 +130,13 @@
          <input type="number" name="price" required class="box" min="0" max="9999999999" placeholder="enter product price" onkeypress="if(this.value.length == 10) return false;" value="<?= $fetch_products['price']; ?>">
          <span>update details</span>
          <textarea name="details" class="box" required cols="30" rows="10"><?= $fetch_products['details']; ?></textarea>
+         <span>update size</span><br><br>
+            <input type="checkbox" name="size[]" value="XS" /><label style="font-size: 18px; padding-right: 15px; padding-left: 1px;"> XS</label>
+            <input type="checkbox" name="size[]" value="S" /><label style="font-size: 18px; padding-right: 15px; padding-left: 1px;"> S</label>
+            <input type="checkbox" name="size[]" value="M" /><label style="font-size: 18px; padding-right: 15px; padding-left: 1px;"> M</label>
+            <input type="checkbox" name="size[]" value="L" /><label style="font-size: 18px; padding-right: 15px; padding-left: 1px;"> L</label>
+            <input type="checkbox" name="size[]" value="XL" /><label style="font-size: 18px; padding-right: 15px; padding-left: 1px;"> XL</label>
+            <input type="checkbox" name="size[]" value="XXL" /><label style="font-size: 18px; padding-right: 15px; padding-left: 1px;"> XXL</label><br><br>
          <span>update image 01</span>
          <input type="file" name="image_01" accept="image/jpg, image/jpeg, image/png, image/webp" class="box">
          <span>update image 02</span>
