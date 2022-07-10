@@ -52,6 +52,7 @@
             <p> number : <span><?= $fetch_orders['number']; ?></span> </p>
             <p> address : <span><?= $fetch_orders['address']; ?></span> </p>
             <p> total products : <span><?= $fetch_orders['total_products']; ?></span> </p>
+            <p> size : <span><?= $fetch_orders['size']; ?></span> </p>
             <p> total price : <span>Rs.<?= $fetch_orders['total_price']; ?>/-</span> </p>
             <p> payment method : <span><?= $fetch_orders['method']; ?></span> </p>
             <form action="" method="post">

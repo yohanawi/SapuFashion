@@ -19,12 +19,14 @@
       $address = 'flat no. '. $_POST['flat'] .', '. $_POST['street'] .', '. $_POST['city'] .', '. $_POST['state'] .', '. $_POST['country'] .' - '. $_POST['pin_code'];
       $address = filter_var($address, FILTER_SANITIZE_STRING);
       $total_products = $_POST['total_products'];
+      $size = $_POST['size'];
+      $size = filter_var($size, FILTER_SANITIZE_STRING);
       $total_price = $_POST['total_price'];
       $check_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
       $check_cart->execute([$user_id]);
       if($check_cart->rowCount() > 0){
-         $insert_order = $conn->prepare("INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price) VALUES(?,?,?,?,?,?,?,?)");
-         $insert_order->execute([$user_id, $name, $number, $email, $method, $address, $total_products, $total_price]);
+         $insert_order = $conn->prepare("INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, size, total_price) VALUES(?,?,?,?,?,?,?,?,?)");
+         $insert_order->execute([$user_id, $name, $number, $email, $method, $address, $total_products, $size, $total_price]);
          $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
          $delete_cart->execute([$user_id]);
          $message[] = 'order placed successfully!';
@@ -47,6 +49,7 @@
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/icon.css">
 
 </head>
 <body>   
@@ -79,7 +82,64 @@
             <input type="hidden" name="total_products" value="<?= $total_products; ?>">
             <input type="hidden" name="total_price" value="<?= $grand_total; ?>" value="">
             <div class="grand-total">Total : <span>Rs.<?= $totals; ?>/-</span></div>
-         </div>
+
+            <div class="inputBoxs">
+               <div class="containers">
+                  <label class="option_item">
+                     <input type="checkbox" class="checkbox" name="size" value="XS" >
+                     <div class="option_inner sizees">
+                        <div class="tickmark"></div>
+                        <label>XS</label>
+                     </div>
+                  </label>    
+               </div>
+               <div class="containers">
+                  <label class="option_item">
+                     <input type="checkbox" class="checkbox" name="size" value="S" >
+                     <div class="option_inner sizees">
+                        <div class="tickmark"></div>
+                        <label>S</label>
+                     </div>
+                  </label>    
+               </div>
+               <div class="containers">
+                  <label class="option_item">
+                     <input type="checkbox" class="checkbox" name="size" value="M" >
+                     <div class="option_inner sizees">
+                        <div class="tickmark"></div>
+                        <label>M</label>
+                     </div>
+                  </label>    
+               </div>
+               <div class="containers">
+                  <label class="option_item">
+                     <input type="checkbox" class="checkbox" name="size" value="L" >
+                     <div class="option_inner sizees">
+                        <div class="tickmark"></div>
+                        <label>L</label>
+                     </div>
+                  </label>    
+               </div>
+               <div class="containers">
+                  <label class="option_item">
+                     <input type="checkbox" class="checkbox" name="size" value="XL" >
+                     <div class="option_inner sizees">
+                        <div class="tickmark"></div>
+                        <label>XL</label>
+                     </div>
+                  </label>    
+               </div>
+               <div class="containers">
+                  <label class="option_item">
+                     <input type="checkbox" class="checkbox" name="size" value="XXL" >
+                     <div class="option_inner sizees">
+                        <div class="tickmark"></div>
+                        <label>XXL</label>
+                     </div>
+                  </label>    
+               </div>
+            </div>
+         </div><br>
          <h3>place your orders</h3>
          <div class="flex">
             <div class="inputBox">

@@ -44,6 +44,7 @@
                     <p>address : <span><?= $fetch_orders['address']; ?></span></p>
                     <p>payment method : <span><?= $fetch_orders['method']; ?></span></p>
                     <p>your orders : <span><?= $fetch_orders['total_products']; ?></span></p>
+                    <p>product size : <span><?= $fetch_orders['size']; ?></span></p>
                     <p>total price : <span>Rs.<?= $fetch_orders['total_price']; ?>/-</span></p>
                     <p> payment status : <span style="color:<?php if($fetch_orders['payment_status'] == 'pending'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_orders['payment_status']; ?></span> </p>
                 </div>
