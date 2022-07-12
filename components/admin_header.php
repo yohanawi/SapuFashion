@@ -13,7 +13,7 @@
 
 <header class="header">
    <section class="flex">
-      <a href="../admin/dashboard.php" class="logo">Sapu<span>Text</span> Admin<span>Panel</span></a>
+      <a href="../admin/dashboard.php" class="logo">Sapu<span>Fashion</span> Admin<span>Panel</span></a>
       <nav class="navbar">
          <a href="../admin/dashboard.php">home</a>
          <a href="../admin/products.php">products</a>

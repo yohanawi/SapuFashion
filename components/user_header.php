@@ -13,7 +13,7 @@
 
 <header class="header">
    <section class="flex">
-      <a href="index.php" class="logo">Sapu Text<span>.</span></a>
+      <a href="index.php" class="logo">Sapu Fashion<span>.</span></a>
 
       <nav class="navbar">
          <a href="index.php">home</a>
