@@ -34,9 +34,8 @@
             </div>
             <div class="content">
                 <h3>why choose us?</h3>
-                <p>T-Shirt Republic was launched in the year 2019, with the aim of providing Sri Lankans the benefit of accessing export quality garments at a good value price. Staying at the forefront of manufacturing, T-Shirt Republic sells products that are accessible to all, with a focus on both fit and comfort. All garments are manufactured in Sri Lanka at our own production facilities laid out for export production.
-                    T-Shirt Republic also collaborates with a variety of other professionals from artists, designers and university interns to create one-off, exclusive capsule collections. We at T-Shirt Republic think it is important to invest in the young generation by providing opportunities for creativity to rise in Sri Lanka.
-                    We exercise meticulous attention to detail throughout the manufacturing process to ensure our products meet best quality standards. With an unrivaled choice of colours  and trend-driven tailored shapes, T-Shirt Republic is one of a kind in Sri Lanka.</p>
+                <center><img src="images/279038080_105549058808149_1215625562389905352_n.jpg" width="35%" style=" border-radius: 50%;"></center>
+                <p>Sapu Fashion was launched in the year 2022.</p>
                 <a href="contact.php" class="btn">contact us</a>
             </div>
         </div>

@@ -111,6 +111,16 @@
             <p>new messages</p>
             <a href="messages.php" class="btn">see messages</a>
          </div>
+         <div class="box">
+            <?php
+               $select_review = $conn->prepare("SELECT * FROM `review_table`");
+               $select_review->execute();
+               $number_of_review = $select_review->rowCount()
+            ?>
+            <h3><?= $number_of_review; ?></h3>
+            <p>review</p>
+            <a href="review.php" class="btn">see review</a>
+         </div>
       </div>
    </section>
 

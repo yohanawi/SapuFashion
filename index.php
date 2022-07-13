@@ -40,7 +40,7 @@ include 'components/wishlist_cart.php';
                             <a href="shop.php" class="btn">shop now</a>
                         </div>
                         <div class="image">
-                            <img src="images/banner2.jpg" alt="">
+                            <img src="images/pexels-marlene-leppänen-1183266-removebg.png" alt="">
                         </div>
                     </div>
                     <div class="swiper-slide slide">
