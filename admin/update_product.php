@@ -15,8 +15,9 @@
       $details = $_POST['details'];
       $details = filter_var($details, FILTER_SANITIZE_STRING);
       $size = $_POST['size'];
-      $size = filter_var($size, FILTER_SANITIZE_STRING);
-      $update_product = $conn->prepare("UPDATE `products` SET name = ?, price = ?, details = ?, size='$for_query' WHERE id = ?");
+      $sizes = implode(",",$size);
+
+      $update_product = $conn->prepare("UPDATE `products` SET name = ?, price = ?, details = ?, size='$sizes' WHERE id = ?");
       $update_product->execute([$name, $price, $details, $pid]);
       $message[] = 'product updated successfully!';
       $old_image_01 = $_POST['old_image_01'];
@@ -71,15 +72,6 @@
             unlink('../uploaded_img/'.$old_image_03);
             $message[] = 'image 03 updated successfully!';
          }
-      }
-      $for_query = '';
-      if(!empty($_POST["size"]))
-      {
-       foreach($_POST["size"] as $size)
-       {
-        $for_query .= $size . ', ';
-       }
-       $for_query = substr($for_query, 0, -2);
       }
    }
 ?>

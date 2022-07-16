@@ -13,8 +13,7 @@
       $details = $_POST['details'];
       $details = filter_var($details, FILTER_SANITIZE_STRING);
       $size = $_POST['size'];
-      $size = filter_var($size, FILTER_SANITIZE_STRING);
-
+      $sizes = implode(",",$size);
 
       $image_01 = $_FILES['image_01']['name'];
       $image_01 = filter_var($image_01, FILTER_SANITIZE_STRING);
@@ -34,23 +33,13 @@
       $image_tmp_name_03 = $_FILES['image_03']['tmp_name'];
       $image_folder_03 = '../uploaded_img/'.$image_03;
 
-      $for_query = '';
-      if(!empty($_POST["size"]))
-      {
-       foreach($_POST["size"] as $size)
-       {
-        $for_query .= $size . ', ';
-       }
-       $for_query = substr($for_query, 0, -2);
-      }
-
       $select_products = $conn->prepare("SELECT * FROM `products` WHERE name = ?");
       $select_products->execute([$name]);
 
       if($select_products->rowCount() > 0){
          $message[] = 'product name already exist!';
       }else{
-         $insert_products = $conn->prepare("INSERT INTO `products`(name, details, price, image_01, image_02, image_03, size) VALUES(?,?,?,?,?,?,'$for_query')");
+         $insert_products = $conn->prepare("INSERT INTO `products`(name, details, price, image_01, image_02, image_03, size) VALUES(?,?,?,?,?,?,'$sizes')");
          $insert_products->execute([$name, $details, $price, $image_01, $image_02, $image_03]);
          if($insert_products){
             if($image_size_01 > 2000000 OR $image_size_02 > 2000000 OR $image_size_03 > 2000000){
