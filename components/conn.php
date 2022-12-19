@@ -5,5 +5,3 @@
     $user_password = 'CI4acd4TvS';
 
     $conn = new PDO($db_name, $user_name, $user_password);
-
-?>

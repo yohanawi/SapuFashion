@@ -1247,17 +1247,19 @@ section {
 .cart-total p span {
    color: var(--red);
 }
+
 /*select option*/
-.products .box .select{
+.products .box .select {
    margin-bottom: .5rem;
    width: 100%;
    background-color: var(--light-bg);
-   padding:1rem;
+   padding: 1rem;
    font-size: 1.8rem;
-   color:var(--black);
+   color: var(--black);
    border-radius: .5rem;
-   border:var(--border);
+   border: var(--border);
 }
+
 .display-orders {
    text-align: center;
    padding-bottom: 0;

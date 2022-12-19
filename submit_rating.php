@@ -82,4 +82,3 @@
 		);
 		echo json_encode($output);
 	}
-?>
