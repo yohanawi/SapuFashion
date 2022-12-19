@@ -23,11 +23,6 @@ This e-commerce website is designed by clothing store, it has admin side and cus
 [Documentation](https://linktodocumentation)
 
 
-## Demo
-
-Insert gif or link to demo
-
-
 ## Support
 
 For support, email yohanawishka2000326@gmail.com.
